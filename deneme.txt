@@ -1,0 +1,367 @@
+using System;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+               string str = string.Empty;
+               string reverse = string.Empty ;
+                int Length = 0;
+                Console.WriteLine("Kelime giriniz");
+                
+                str = Console.ReadLine();            
+                Length = str.Length - 1;
+                while (Length >= 0)
+                {
+                    reverse = reverse + str[Length];
+                    Length--;
+                }
+           
+                Console.WriteLine(reverse);
+                Console.ReadLine();
+            
+        }
+    }
+}
+--------------------------------------------------
+using System;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            string kelime = string.Empty;
+            string terskelime = string.Empty ;
+            Console.WriteLine(" Kelime giriniz");
+            kelime = Console.ReadLine();
+            for (int i = kelime.Length - 1; i >= 0; i--) //String Reverse  
+            {
+                terskelime += kelime[i].ToString();
+                
+            }
+            if (terskelime == kelime) // Checking whether string is palindrome or not  
+            {
+                Console.WriteLine("eþit");
+            }
+            else
+            {
+                Console.WriteLine("eþit deðil");
+            }
+            Console.ReadKey();
+
+        }
+    }
+}
+-----------------------------------------------------------------
+using System;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int sayi = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i <= sayi; i++)
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+------------------------------------------
+using System;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int toplam = 0;
+            int[] sayi = { 1, 2, 3, 4 };
+
+           
+            for (int i = 0; i <= sayi.Length-1; i++)
+            {
+                toplam += sayi[i];
+               
+            } Console.WriteLine(Convert.ToString (toplam));
+            Console.ReadLine();
+        }
+    }
+}
+-----------------------------dene
+int cikarma = 0;
+            int[] sayi = { 1, 2, 3, 4,10,11,12,13,15,16};
+            int[] sayii =new int[10];
+            int s = (int)sayi.Average();
+            for (int i = 0; i < sayi.Length-1; i++)
+            {
+                cikarma = sayi[i] - s;
+                cikarma = sayii[i];
+            }
+            int ort = sayii.Min();
+            Console.WriteLine("Ortalama sayý="+s+"   yakýn sayi="+ort );
+           
+            //for (int i = 0; i <= sayi.Length-1; i++)
+            //{
+            //    toplam += sayi[i];
+               
+            //}
+            
+            Console.ReadLine();
+-----------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] array = { 545, 23, 43, 32, 23, 45, 4, 45, 45, 7, 47, 23, 12312, 213232, 2323 };
+            int avg = (int)array.Average();
+            List<Tuple<int, int>> list = new List<Tuple<int, int>>();
+
+            foreach (int sayi in array)
+            {
+                list.Add(new Tuple<int, int>(sayi, sayi - avg));
+            }
+
+            Tuple<int, int> first = new Tuple<int, int>(0, 0);
+            Tuple<int, int> second = new Tuple<int, int>(0, 0);
+
+            for (int i = 0; i < int.MaxValue; i++)
+            {
+                Tuple<int, int> m = list.FirstOrDefault(a => a.Item2.Equals(i));
+                if (m != null)
+                {
+                    first = m;
+                    break;
+                }
+            }
+
+            for (int i = 0; i > int.MinValue; i--)
+            {
+                Tuple<int, int> m = list.FirstOrDefault(a => a.Item2.Equals(i));
+                if (m != null)
+                {
+                    second = m;
+                    break;
+                }
+            }
+
+            if (first.Item2 - second.Item2 > second.Item2 - first.Item2)
+            {
+                Console.WriteLine(second.Item1);
+            }
+            else
+            {
+                Console.WriteLine(first.Item1);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
+-----------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+           
+            int[] sayi = {0, 1, 2, -3, 4, -10, 11, -12, 13, -15, 16 };
+            for (int i = 0; i < sayi.Length ; i++)
+            {
+                if (sayi[i]<0)
+                {
+                    Console.WriteLine(sayi[i]+" Negatif");
+                }
+                else if(sayi[i]>0)
+                {
+                    Console.WriteLine(sayi[i]+" Pozitif");
+                }
+                else
+                {
+                    Console.WriteLine(sayi[i]+" Sayý 0");
+                }
+            }
+           
+ 
+
+            //for (int i = 0; i <= sayi.Length-1; i++)
+            //{
+            //    toplam += sayi[i];
+
+            //}
+
+            Console.ReadLine();
+
+        }
+    }
+}
+--------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int tekCount=0;
+            int ciftCount=0;
+
+            int[] array = new int[1000];
+            for (int i = 0; i < 1000; i++)
+            {
+                array[i] = i;
+                if (array[i] % 2 == 0)
+                {
+                    tekCount++;                   
+                }
+                else
+                {
+                    ciftCount++;
+                }
+            }
+            Console.WriteLine("tek sayýsý="+tekCount);
+            Console.WriteLine("çift sayýsý="+ciftCount);
+
+
+            Console.ReadLine();
+
+        }
+    }
+}
+-------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+
+
+            int[] arr1 = { 1,2,3,4,5,6,7,8,9};
+            int[] arr2 = new int[10];
+            int[] arr3 = new int[10];
+            
+   
+            
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                if (arr1[i] % 2 == 0)
+                {
+                    arr2[i] = arr1[i];
+                    i++;
+                }
+                else
+                {
+                    arr3[i] = arr1[i];
+                    i++;
+                }
+            }
+
+           
+            for (int i = 0; i < arr2.Length; i++)
+            {
+                Console.WriteLine("", arr2[i]);
+            }
+
+            
+            for (int i = 0; i <arr3.Length; i++)
+            {
+                Console.WriteLine("", arr3[i]);
+            }
+            Console.ReadLine();
+        }
+        
+    }
+
+}
+    
+-------------------------------------------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            string test = "asdasdasdas";
+            List<char> f = test.ToList();
+            List<IGrouping<char, char>> gruoped = f.GroupBy(a => a).OrderBy(a => a.Key).ToList();
+            foreach(IGrouping<char,char> item in gruoped)
+            {
+                Console.WriteLine(item.Key + ":" + item.Count());
+            }
+            Console.ReadLine();
+
+           
+        }
+        
+    }
+
+}
+    
+----------------------------
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace deneme122
+{
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            int a = 0, myWord = 1;
+            string str = "Hello World! a s sd w";
+            while (a <= str.Length - 1)
+            {
+                if (str[a] == ' ' || str[a] == '\n' || str[a] == '\t')
+                {
+                    myWord++;
+                }
+                a++;
+            }
+            Console.WriteLine(myWord);
+            Console.ReadLine();
+
+
+        }
+        
+    }
+
+}
+    
+a
