@@ -15,8 +15,8 @@ namespace WebApiDeneme
                 modelBuilder.Entity<Models.Car>().HasData(new Models.Car()
                 {
                     Id = i,
-                    Name = "Arabanın Adı"+i,
-                    Brand="Arabanın Modeli"+i,
+                    Name = "Arabanın Adı= "+i,
+                    Brand="Arabanın Modeli= "+i,
                     Price=20000+i
 
                 });
